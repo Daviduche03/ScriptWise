@@ -18,11 +18,11 @@ const MenuBar = () => {
   }
 
   return (
-    <div className="flex flex-wrap gap-2 bg-[#111] p-3 rounded-t-xl mb-3">
+    <div className="flex flex-wrap gap-2 bg-gray-300 p-3 rounded-t-xl mb-3">
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
-        className={editor.isActive("bold") ? "is-active" : "font-bold"}
+        className={editor.isActive("bold") ? "is-active" : "font-bold border border-gray-700 p-1"}
       >
         <Bold/>
       </button>
