@@ -21,6 +21,7 @@ import {
   Redo2,
   Undo2,
   Strikethrough,
+  Minus
 } from "lucide-react";
 
 import reactLogo from "./assets/react.svg";
@@ -153,7 +154,7 @@ const MenuBar = () => {
         <TextQuote /> h
       </button>
       <button onClick={() => editor.chain().focus().setHorizontalRule().run()} className="font-bold border border-gray-700 p-1">
-        horizontal rule
+                <Minus />
       </button>
       <button onClick={() => editor.chain().focus().setHardBreak().run()} className="font-bold border border-gray-700 p-1">
         hard break
