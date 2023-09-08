@@ -29,6 +29,21 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
+function Tooltip({ text, children }) {
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  return (
+    <div
+      className="tooltip-container"
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+    >
+      {children}
+      {showTooltip && <div className="tooltip">{text}</div>}
+    </div>
+  );
+}
+
 const MenuBar = () => {
   const { editor } = useCurrentEditor();
 
@@ -38,6 +53,7 @@ const MenuBar = () => {
 
   return (
     <div className="flex flex-wrap gap-2 bg-gray-100 p-3 rounded-t-xl mb-3">
+      <Tooltip text="Bold">
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
@@ -49,6 +65,7 @@ const MenuBar = () => {
       >
         <Bold />
       </button>
+      </Tooltip>
       <button
         onClick={() => editor.chain().focus().toggleItalic().run()}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
