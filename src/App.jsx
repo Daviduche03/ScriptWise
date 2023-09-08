@@ -21,7 +21,8 @@ import {
   Redo2,
   Undo2,
   Strikethrough,
-  Minus
+  Minus,
+  Scissors,
 } from "lucide-react";
 
 import reactLogo from "./assets/react.svg";
@@ -51,40 +52,64 @@ const MenuBar = () => {
       <button
         onClick={() => editor.chain().focus().toggleItalic().run()}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
-        className={editor.isActive("italic") ? "is-active" : "font-bold border border-gray-700 p-1"}
+        className={
+          editor.isActive("italic")
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
+        }
       >
         <Italic />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleStrike().run()}
         disabled={!editor.can().chain().focus().toggleStrike().run()}
-        className={editor.isActive("strike") ? "is-active" : "font-bold border border-gray-700 p-1"}
+        className={
+          editor.isActive("strike")
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
+        }
       >
         <Strikethrough />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleCode().run()}
         disabled={!editor.can().chain().focus().toggleCode().run()}
-        className={editor.isActive("code") ? "is-active" : "font-bold border border-gray-700 p-1"}
+        className={
+          editor.isActive("code")
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
+        }
       >
         <Code />
       </button>
-      <button onClick={() => editor.chain().focus().unsetAllMarks().run()} className="font-bold border border-gray-700 p-1">
+      <button
+        onClick={() => editor.chain().focus().unsetAllMarks().run()}
+        className="font-bold border border-gray-700 p-1"
+      >
         clear marks
       </button>
-      <button onClick={() => editor.chain().focus().clearNodes().run()} className="font-bold border border-gray-700 p-1">
+      <button
+        onClick={() => editor.chain().focus().clearNodes().run()}
+        className="font-bold border border-gray-700 p-1"
+      >
         clear nodes
       </button>
       <button
         onClick={() => editor.chain().focus().setParagraph().run()}
-        className={editor.isActive("paragraph") ? "is-active" : "font-bold border border-gray-700 p-1"}
+        className={
+          editor.isActive("paragraph")
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
+        }
       >
         <Pilcrow />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
         className={
-          editor.isActive("heading", { level: 1 }) ? "is-active" : "font-bold border border-gray-700 p-1"
+          editor.isActive("heading", { level: 1 })
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
         }
       >
         <Heading1 />
@@ -92,7 +117,9 @@ const MenuBar = () => {
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
         className={
-          editor.isActive("heading", { level: 2 }) ? "is-active" : "font-bold border border-gray-700 p-1"
+          editor.isActive("heading", { level: 2 })
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
         }
       >
         <Heading2 />
@@ -100,7 +127,9 @@ const MenuBar = () => {
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
         className={
-          editor.isActive("heading", { level: 3 }) ? "is-active" : "font-bold border border-gray-700 p-1"
+          editor.isActive("heading", { level: 3 })
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
         }
       >
         <Heading3 />
@@ -108,7 +137,9 @@ const MenuBar = () => {
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
         className={
-          editor.isActive("heading", { level: 4 }) ? "is-active" : "font-bold border border-gray-700 p-1"
+          editor.isActive("heading", { level: 4 })
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
         }
       >
         <Heading4 />
@@ -116,7 +147,9 @@ const MenuBar = () => {
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 5 }).run()}
         className={
-          editor.isActive("heading", { level: 5 }) ? "is-active" : "font-bold border border-gray-700 p-1"
+          editor.isActive("heading", { level: 5 })
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
         }
       >
         <Heading5 />
@@ -124,40 +157,64 @@ const MenuBar = () => {
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 6 }).run()}
         className={
-          editor.isActive("heading", { level: 6 }) ? "is-active" : "font-bold border border-gray-700 p-1"
+          editor.isActive("heading", { level: 6 })
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
         }
       >
         <Heading6 />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleBulletList().run()}
-        className={editor.isActive("bulletList") ? "is-active" : "font-bold border border-gray-700 p-1"}
+        className={
+          editor.isActive("bulletList")
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
+        }
       >
         <List />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
-        className={editor.isActive("orderedList") ? "is-active" : "font-bold border border-gray-700 p-1"}
+        className={
+          editor.isActive("orderedList")
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
+        }
       >
         <orderedList /> h
       </button>
       <button
         onClick={() => editor.chain().focus().toggleCodeBlock().run()}
-        className={editor.isActive("codeBlock") ? "is-active" : "font-bold border border-gray-700 p-1"}
+        className={
+          editor.isActive("codeBlock")
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
+        }
       >
         <Code />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleBlockquote().run()}
-        className={editor.isActive("blockquote") ? "is-active" : "font-bold border border-gray-700 p-1"}
+        className={
+          editor.isActive("blockquote")
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
+        }
       >
         <TextQuote /> h
       </button>
-      <button onClick={() => editor.chain().focus().setHorizontalRule().run()} className="font-bold border border-gray-700 p-1">
-                <Minus />
+      <button
+        onClick={() => editor.chain().focus().setHorizontalRule().run()}
+        className="font-bold border border-gray-700 p-1"
+      >
+        <Minus />
       </button>
-      <button onClick={() => editor.chain().focus().setHardBreak().run()} className="font-bold border border-gray-700 p-1">
-        hard break
+      <button
+        onClick={() => editor.chain().focus().setHardBreak().run()}
+        className="font-bold border border-gray-700 p-1"
+      >
+        <Scissors />
       </button>
       <button
         onClick={() => editor.chain().focus().undo().run()}
@@ -176,7 +233,9 @@ const MenuBar = () => {
       <button
         onClick={() => editor.chain().focus().setColor("#958DF1").run()}
         className={
-          editor.isActive("textStyle", { color: "#958DF1" }) ? "is-active" : "font-bold border border-gray-700 p-1"
+          editor.isActive("textStyle", { color: "#958DF1" })
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
         }
       >
         purple
