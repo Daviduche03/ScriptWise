@@ -20,7 +20,7 @@ import {
   Code,
   Redo2,
   Undo2,
-  StrikeThrough,
+  Strikethrough,
 } from "lucide-react";
 
 import reactLogo from "./assets/react.svg";
@@ -59,7 +59,7 @@ const MenuBar = () => {
         disabled={!editor.can().chain().focus().toggleStrike().run()}
         className={editor.isActive("strike") ? "is-active" : "font-bold border border-gray-700 p-1"}
       >
-        <StrikeThrough />
+        <Strikethrough />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleCode().run()}
