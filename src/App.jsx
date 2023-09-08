@@ -18,6 +18,9 @@ import {
   List,
   Italic,
   Code,
+  Redo2,
+  Undo2,
+  StrikeThrough,
 } from "lucide-react";
 
 import reactLogo from "./assets/react.svg";
@@ -56,7 +59,7 @@ const MenuBar = () => {
         disabled={!editor.can().chain().focus().toggleStrike().run()}
         className={editor.isActive("strike") ? "is-active" : "bold"}
       >
-        strike
+        <StrikeThrough />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleCode().run()}
@@ -159,13 +162,13 @@ const MenuBar = () => {
         onClick={() => editor.chain().focus().undo().run()}
         disabled={!editor.can().chain().focus().undo().run()}
       >
-        undo
+        <Undo2 />
       </button>
       <button
         onClick={() => editor.chain().focus().redo().run()}
         disabled={!editor.can().chain().focus().redo().run()}
       >
-        redo
+        <Redo2 />
       </button>
       <button
         onClick={() => editor.chain().focus().setColor("#958DF1").run()}
