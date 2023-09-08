@@ -138,7 +138,7 @@ const MenuBar = () => {
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
         className={editor.isActive("orderedList") ? "is-active" : "font-bold border border-gray-700 p-1"}
       >
-        <orderedList />
+        <orderedList /> h
       </button>
       <button
         onClick={() => editor.chain().focus().toggleCodeBlock().run()}
@@ -150,7 +150,7 @@ const MenuBar = () => {
         onClick={() => editor.chain().focus().toggleBlockquote().run()}
         className={editor.isActive("blockquote") ? "is-active" : "font-bold border border-gray-700 p-1"}
       >
-        <TextQuote />
+        <TextQuote /> h
       </button>
       <button onClick={() => editor.chain().focus().setHorizontalRule().run()} className="font-bold border border-gray-700 p-1">
         horizontal rule
