@@ -33,13 +33,13 @@ function Tooltip({ text, children }) {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
-    <div
-      className="tooltip-container"
-      onMouseEnter={() => setShowTooltip(true)}
-      onMouseLeave={() => setShowTooltip(false)}
-    >
+    <div className="relative inline-block">
       {children}
-      {showTooltip && <div className="tooltip">{text}</div>}
+      {showTooltip && (
+        <div className="absolute bg-gray-600 text-white py-2 px-4 rounded-lg shadow-lg top-0 left-1/2 transform -translate-x-1/2 -mt-10">
+          {text}
+        </div>
+      )}
     </div>
   );
 }
