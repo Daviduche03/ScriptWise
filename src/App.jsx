@@ -182,7 +182,7 @@ const MenuBar = () => {
             : "font-bold border border-gray-700 p-1"
         }
       >
-        <orderedList /> h
+        <orderedList /> 
       </button>
       <button
         onClick={() => editor.chain().focus().toggleCodeBlock().run()}
