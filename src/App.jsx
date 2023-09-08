@@ -308,6 +308,19 @@ const MenuBar = () => {
           purple
         </button>
       </Tooltip>
+      
+            <Tooltip text="insert">
+        <button
+          onClick={() => editor.chain().focus().insertContent('goo').run()}
+          className={
+            editor.isActive("bold")
+              ? "is-active"
+              : "font-bold border border-gray-700 p-1"
+          }
+        >
+          insert
+        </button>
+      </Tooltip>
     </div>
   );
 };
