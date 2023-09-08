@@ -4,7 +4,21 @@ import TextStyle from "@tiptap/extension-text-style";
 import { EditorProvider, useCurrentEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import React from "react";
-import { Bold } from 'lucide-react';
+import {
+  Bold,
+  TextQuote,
+  ListOrdered,
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+  Heading5,
+  Heading6,
+  Pilcrow,
+  List,
+  Italic,
+  Code,
+} from "lucide-react";
 
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
@@ -22,16 +36,20 @@ const MenuBar = () => {
       <button
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
-        className={editor.isActive("bold") ? "is-active" : "font-bold border border-gray-700 p-1"}
+        className={
+          editor.isActive("bold")
+            ? "is-active"
+            : "font-bold border border-gray-700 p-1"
+        }
       >
-        <Bold/>
+        <Bold />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleItalic().run()}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
         className={editor.isActive("italic") ? "is-active" : "italic"}
       >
-        I
+        <Italic />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleStrike().run()}
@@ -45,7 +63,7 @@ const MenuBar = () => {
         disabled={!editor.can().chain().focus().toggleCode().run()}
         className={editor.isActive("code") ? "is-active" : "bold"}
       >
-        code
+        <Code />
       </button>
       <button onClick={() => editor.chain().focus().unsetAllMarks().run()}>
         clear marks
@@ -57,67 +75,79 @@ const MenuBar = () => {
         onClick={() => editor.chain().focus().setParagraph().run()}
         className={editor.isActive("paragraph") ? "is-active" : "bold"}
       >
-        P
+        <Pilcrow />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
-        className={editor.isActive("heading", { level: 1 }) ? "is-active" : "bold"}
+        className={
+          editor.isActive("heading", { level: 1 }) ? "is-active" : "bold"
+        }
       >
-        H1
+        <Heading1 />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
-        className={editor.isActive("heading", { level: 2 }) ? "is-active" : "bold"}
+        className={
+          editor.isActive("heading", { level: 2 }) ? "is-active" : "bold"
+        }
       >
-        H2
+        <Heading2 />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
-        className={editor.isActive("heading", { level: 3 }) ? "is-active" : "bold"}
+        className={
+          editor.isActive("heading", { level: 3 }) ? "is-active" : "bold"
+        }
       >
-        H3
+        <Heading3 />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
-        className={editor.isActive("heading", { level: 4 }) ? "is-active" : "bold"}
+        className={
+          editor.isActive("heading", { level: 4 }) ? "is-active" : "bold"
+        }
       >
-        H4
+        <Heading4 />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 5 }).run()}
-        className={editor.isActive("heading", { level: 5 }) ? "is-active" : "bold"}
+        className={
+          editor.isActive("heading", { level: 5 }) ? "is-active" : "bold"
+        }
       >
-        H5
+        <Heading5 />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleHeading({ level: 6 }).run()}
-        className={editor.isActive("heading", { level: 6 }) ? "is-active" : "bold"}
+        className={
+          editor.isActive("heading", { level: 6 }) ? "is-active" : "bold"
+        }
       >
-        H6
+        <Heading6 />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleBulletList().run()}
         className={editor.isActive("bulletList") ? "is-active" : "bold"}
       >
-        bullet list
+        <List />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
         className={editor.isActive("orderedList") ? "is-active" : ""}
       >
-        ordered list
+        <orderedList />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleCodeBlock().run()}
         className={editor.isActive("codeBlock") ? "is-active" : ""}
       >
-        code block
+        <Code />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleBlockquote().run()}
         className={editor.isActive("blockquote") ? "is-active" : ""}
       >
-        blockquote
+        <TextQuote />
       </button>
       <button onClick={() => editor.chain().focus().setHorizontalRule().run()}>
         horizontal rule
@@ -164,13 +194,13 @@ const extensions = [
   }),
 ];
 
-const Footer = () =>{
+const Footer = () => {
   return (
     <div className="p-3 bg-[#111] text-white rounded-b-xl mt-3">
-    <p>Made with ❤️ by David uche</p>
+      <p>Made with ❤️ by David uche</p>
     </div>
-    )
-}
+  );
+};
 
 const content = `
 <h2>
@@ -211,7 +241,6 @@ function App() {
         slotAfter={<Footer />}
         extensions={extensions}
         content={content}
-        
       ></EditorProvider>
     </div>
   );
