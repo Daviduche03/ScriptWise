@@ -40,7 +40,7 @@ function Tooltip({ text, children }) {
     >
       {children}
       {showTooltip && (
-        <div className="absolute bg-gray-600 text-white py-2 px-4 rounded-lg shadow-lg top-0 left-1/2 transform -translate-x-1/2 -mt-10">
+        <div className="absolute bg-transparent text-white py-2 px-4 rounded-lg shadow-lg top-0 left-1/2 transform -translate-x-1/2 -mt-10 border border-black">
           {text}
         </div>
       )}
