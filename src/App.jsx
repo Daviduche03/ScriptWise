@@ -300,7 +300,7 @@ display: none;
 
 function App() {
   return (
-    <div className="p-2 outline-none">
+    <div className="p-2 outline-none border-none">
       <EditorProvider
         slotBefore={<MenuBar />}
         slotAfter={<Footer />}
