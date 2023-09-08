@@ -82,12 +82,7 @@ const MenuBar = () => {
       >
         <Code />
       </button>
-      <button
-        onClick={() => editor.chain().focus().unsetAllMarks().run()}
-        className="font-bold border border-gray-700 p-1"
-      >
-        clear marks
-      </button>
+      
       <button
         onClick={() => editor.chain().focus().clearNodes().run()}
         className="font-bold border border-gray-700 p-1"
