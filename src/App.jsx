@@ -82,7 +82,7 @@ const MenuBar = () => {
       >
         <Code />
       </button>
-      
+
       <button
         onClick={() => editor.chain().focus().clearNodes().run()}
         className="font-bold border border-gray-700 p-1"
@@ -177,7 +177,7 @@ const MenuBar = () => {
             : "font-bold border border-gray-700 p-1"
         }
       >
-        <orderedList /> 
+        <ListOrdered />
       </button>
       <button
         onClick={() => editor.chain().focus().toggleCodeBlock().run()}
@@ -197,7 +197,7 @@ const MenuBar = () => {
             : "font-bold border border-gray-700 p-1"
         }
       >
-        <TextQuote /> h
+        <TextQuote />
       </button>
       <button
         onClick={() => editor.chain().focus().setHorizontalRule().run()}
