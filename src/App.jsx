@@ -1,7 +1,7 @@
 import { Color } from "@tiptap/extension-color";
 import ListItem from "@tiptap/extension-list-item";
 import TextStyle from "@tiptap/extension-text-style";
-import { EditorProvider, useCurrentEditor } from "@tiptap/react";
+import { EditorProvider, useCurrentEditor, BubbleMenu, FloatingMenu } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import React, { useState } from "react";
 import {
@@ -308,10 +308,10 @@ const MenuBar = () => {
           purple
         </button>
       </Tooltip>
-      
-            <Tooltip text="insert">
+
+      <Tooltip text="insert">
         <button
-          onClick={() => editor.chain().focus().insertContent('goo').run()}
+          onClick={() => editor.chain().focus().insertContent("goo").run()}
           className={
             editor.isActive("bold")
               ? "is-active"
@@ -346,6 +346,250 @@ const Footer = () => {
       <p>Made with ❤️ by David uche</p>
     </div>
   );
+};
+
+const defaultEditorContent = {
+  type: "doc",
+  content: [
+    {
+      type: "heading",
+      attrs: { level: 2 },
+      content: [{ type: "text", text: "Introducing Scriptwise" }],
+    },
+    {
+      type: "paragraph",
+      content: [
+        {
+          type: "text",
+          marks: [
+            {
+              type: "link",
+              attrs: {
+                href: "https://github.com/steven-tey/scriptwise",
+                target: "_blank",
+                class:
+                  "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+              },
+            },
+          ],
+          text: "Scriptwise",
+        },
+        {
+          type: "text",
+          text: " is a Notion-style WYSIWYG editor with AI-powered autocompletion. Built with ",
+        },
+        {
+          type: "text",
+          marks: [
+            {
+              type: "link",
+              attrs: {
+                href: "https://tiptap.dev/",
+                target: "_blank",
+                class:
+                  "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+              },
+            },
+          ],
+          text: "Tiptap",
+        },
+        { type: "text", text: " + " },
+        {
+          type: "text",
+          marks: [
+            {
+              type: "link",
+              attrs: {
+                href: "https://sdk.vercel.ai/docs",
+                target: "_blank",
+                class:
+                  "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+              },
+            },
+          ],
+          text: "Vercel AI SDK",
+        },
+        { type: "text", text: "." },
+      ],
+    },
+    {
+      type: "heading",
+      attrs: { level: 3 },
+      content: [{ type: "text", text: "Installation" }],
+    },
+    {
+      type: "codeBlock",
+      attrs: { language: null },
+      content: [{ type: "text", text: "npm i scriptwise" }],
+    },
+    {
+      type: "heading",
+      attrs: { level: 3 },
+      content: [{ type: "text", text: "Usage" }],
+    },
+    {
+      type: "codeBlock",
+      attrs: { language: null },
+      content: [
+        {
+          type: "text",
+          text: 'import { Editor } from "scriptwise";\n\nexport default function App() {\n return (\n <Editor />\n )\n}',
+        },
+      ],
+    },
+    {
+      type: "heading",
+      attrs: { level: 3 },
+      content: [{ type: "text", text: "Features" }],
+    },
+    {
+      type: "orderedList",
+      attrs: { tight: true, start: 1 },
+      content: [
+        {
+          type: "listItem",
+          content: [
+            {
+              type: "paragraph",
+              content: [{ type: "text", text: "Slash menu & bubble menu" }],
+            },
+          ],
+        },
+        {
+          type: "listItem",
+          content: [
+            {
+              type: "paragraph",
+              content: [
+                { type: "text", text: "AI autocomplete (type " },
+                { type: "text", marks: [{ type: "code" }], text: "++" },
+                {
+                  type: "text",
+                  text: " to activate, or select from slash menu)",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: "listItem",
+          content: [
+            {
+              type: "paragraph",
+              content: [
+                {
+                  type: "text",
+                  text: "Image uploads (drag & drop / copy & paste, or select from slash menu) ",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: "image",
+      attrs: {
+        src: "https://public.blob.vercel-storage.com/pJrjXbdONOnAeZAZ/banner-2wQk82qTwyVgvlhTW21GIkWgqPGD2C.png",
+        alt: "banner.png",
+        title: "banner.png",
+        width: null,
+        height: null,
+      },
+    },
+    { type: "horizontalRule" },
+    {
+      type: "heading",
+      attrs: { level: 3 },
+      content: [{ type: "text", text: "Learn more" }],
+    },
+    {
+      type: "taskList",
+      content: [
+        {
+          type: "taskItem",
+          attrs: { checked: false },
+          content: [
+            {
+              type: "paragraph",
+              content: [
+                { type: "text", text: "Star us on " },
+                {
+                  type: "text",
+                  marks: [
+                    {
+                      type: "link",
+                      attrs: {
+                        href: "https://github.com/steven-tey/scriptwise",
+                        target: "_blank",
+                        class:
+                          "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+                      },
+                    },
+                  ],
+                  text: "GitHub",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: "taskItem",
+          attrs: { checked: false },
+          content: [
+            {
+              type: "paragraph",
+              content: [
+                { type: "text", text: "Install the " },
+                {
+                  type: "text",
+                  marks: [
+                    {
+                      type: "link",
+                      attrs: {
+                        href: "https://www.npmjs.com/package/scriptwise",
+                        target: "_blank",
+                        class:
+                          "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+                      },
+                    },
+                  ],
+                  text: "NPM package",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: "taskItem",
+          attrs: { checked: false },
+          content: [
+            {
+              type: "paragraph",
+              content: [
+                {
+                  type: "text",
+                  marks: [
+                    {
+                      type: "link",
+                      attrs: {
+                        href: "https://vercel.com/templates/next.js/scriptwise",
+                        target: "_blank",
+                        class:
+                          "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+                      },
+                    },
+                  ],
+                  text: "Deploy your own",
+                },
+                { type: "text", text: " to Vercel" },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
 };
 
 const content = `
@@ -386,8 +630,11 @@ function App() {
         slotBefore={<MenuBar />}
         slotAfter={<Footer />}
         extensions={extensions}
-        content={content}
-      ></EditorProvider>
+        content={defaultEditorContent}
+      >
+      <FloatingMenu>This is the floating menu</FloatingMenu>
+      <BubbleMenu>This is the bubble menu</BubbleMenu>
+      </EditorProvider>
     </div>
   );
 }
