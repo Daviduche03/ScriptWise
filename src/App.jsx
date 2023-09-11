@@ -352,9 +352,9 @@ const Footer = () => {
 const content = `
 <div class="">
   <span class="flex">
-      <h1 class="font-bold">Introducing ScriptWise</h1> - <p>an AI powered WYSIWYG editor Built with <a href=""><em>TipTap</em></a> and <a href=""><em>Vercel AI SDK</em></a> </p>
+      <h1><b>Introducing ScriptWise</b></h1> <p>an AI powered WYSIWYG editor Built with <a href=""><b>TipTap</b></a> and <a href=""><b>Vercel AI SDK</b></a> </p>
       
-      <p>ScriptWise is built to be an improved version of <a href=""><em>Novel</em></a> written in plain reactjs</p>
+      <p>ScriptWise is built to be an improved version of <a href=""><b>Novel</b></a> written in plain reactjs</p>
       
   </span>
 
