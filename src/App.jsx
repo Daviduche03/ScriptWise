@@ -365,6 +365,7 @@ function App() {
   return (
     <div className="p-2 outline-none border-none">
       <EditorProvider
+className="bg-black"
         slotBefore={<MenuBar />}
         slotAfter={<Footer />}
         extensions={extensions}
