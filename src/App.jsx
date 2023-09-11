@@ -40,7 +40,7 @@ function Tooltip({ text, children }) {
     >
       {children}
       {showTooltip && (
-        <div className="absolute bg-white text-white py-2 px-4 rounded-lg shadow-lg top-0 left-1/2 transform -translate-x-1/2 -mt-10 border border-black">
+        <div className="absolute bg-white text-black py-2 px-4 rounded-lg shadow-lg top-0 left-1/2 transform -translate-x-1/2 -mt-10 border border-black">
           {text}
         </div>
       )}
@@ -351,8 +351,8 @@ const Footer = () => {
 
 const content = `
 <div class="">
-  <span>
-      <h1>Introducing ScriptWise</h1> - <p>an AI powered WYSIWYG editor Built with <a href=""><em>TipTap</em></a> and <a href=""><em>Vercel AI SDK</em></a> </p>
+  <span class="flex">
+      <h1 class="font-bold">Introducing ScriptWise</h1> - <p>an AI powered WYSIWYG editor Built with <a href=""><em>TipTap</em></a> and <a href=""><em>Vercel AI SDK</em></a> </p>
       
       <p>ScriptWise is built to be an improved version of <a href=""><em>Novel</em></a> written in plain reactjs</p>
       
