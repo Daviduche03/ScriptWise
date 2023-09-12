@@ -38,7 +38,7 @@
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.5"
   },
-  "main": "index.js",
+  
   "repository": "https://github.com/Daviduche03/ScriptWise.git",
   "author": "Daviduche03 <daviduche4809@gmail.com>",
   "license": "MIT"
