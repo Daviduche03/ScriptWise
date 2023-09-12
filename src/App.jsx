@@ -31,7 +31,7 @@ import {
   Minus,
   Scissors,
 } from "lucide-react";
- 
+
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -56,6 +56,7 @@ function Tooltip({ text, children }) {
 }
 
 function Shortcut() {
+  const { editor } = useCurrentEditor();
   // Define a state variable for showing/hiding the div
   const [showDiv, setShowDiv] = useState(false);
 
@@ -63,12 +64,26 @@ function Shortcut() {
     <div>
       <button onClick={() => setShowDiv(!showDiv)}>button</button>
       {/* Your component content */}
-      {showDiv && <div>Div shown</div>}
+      <div className="relative inline-block">
+        {showDiv && (
+          <div className="absolute bg-white text-black py-2 px-4 rounded-lg shadow-lg top-0 left-1/2 transform -translate-x-1/2 -mt-10 border border-black">
+            Div shown
+            <button
+              onClick={() => editor.chain().focus().insertContent("goo").run()}
+              className={
+                editor.isActive("bold")
+                  ? "is-active"
+                  : "font-bold border border-gray-700 p-1"
+              }
+            >
+              insert
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
-
-
 
 const MenuBar = () => {
   const { editor } = useCurrentEditor();
@@ -382,8 +397,6 @@ const content = `
 </div>
 `;
 
-
-
 function App() {
   return (
     <div className="p-2 outline-none border-none">
@@ -394,7 +407,7 @@ function App() {
         extensions={extensions}
         content={content}
       >
-      <Shortcut/>
+        <Shortcut />
         <FloatingMenu>This is the floating menu</FloatingMenu>
         <BubbleMenu>This is the bubble menu</BubbleMenu>
       </EditorProvider>

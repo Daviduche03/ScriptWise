@@ -42,9 +42,7 @@ h1 {
 
 button {
   border-radius: 8px;
-  
-  
-  
+
   font-weight: 700;
   font-family: inherit;
   background-color: transparent;
@@ -53,7 +51,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #ffeaef;
+  /* border-color: #ffeaef; */
 }
 button:focus,
 button:focus-visible {
