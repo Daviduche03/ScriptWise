@@ -1,4 +1,4 @@
-import { useHotkeys } from 'react-hotkey-hook';
+//import { useHotkeys } from 'react-hotkey-hook';
 
 import { Color } from "@tiptap/extension-color";
 import ListItem from "@tiptap/extension-list-item";
@@ -56,19 +56,12 @@ function Tooltip({ text, children }) {
 }
 
 function Shortcut() {
-  // Define a hotkey for '!!'
+  // Define a state variable for showing/hiding the div
   const [showDiv, setShowDiv] = useState(false);
-
-  useHotkeys('a', () => {
-    // Your custom action when '!!' is pressed
-    if (!showDiv) {
-      setShowDiv(true);
-      console.log('Double Exclamation Mark (!!) pressed');
-    }
-  });
 
   return (
     <div>
+      <button onClick={() => setShowDiv(!showDiv)}>button</button>
       {/* Your component content */}
       {showDiv && <div>Div shown</div>}
     </div>
