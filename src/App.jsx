@@ -1,3 +1,5 @@
+import { useHotkeys } from 'react-hotkey-hook';
+
 import { Color } from "@tiptap/extension-color";
 import ListItem from "@tiptap/extension-list-item";
 import TextStyle from "@tiptap/extension-text-style";
@@ -29,7 +31,7 @@ import {
   Minus,
   Scissors,
 } from "lucide-react";
-import { useHotkeys } from 'react-hotkey-hook';
+ 
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -57,7 +59,7 @@ function Shortcut() {
   // Define a hotkey for '!!'
   const [showDiv, setShowDiv] = useState(false);
 
-  useHotkeys('!!', () => {
+  useHotkeys('a', () => {
     // Your custom action when '!!' is pressed
     if (!showDiv) {
       setShowDiv(true);
