@@ -1,7 +1,12 @@
 import { Color } from "@tiptap/extension-color";
 import ListItem from "@tiptap/extension-list-item";
 import TextStyle from "@tiptap/extension-text-style";
-import { EditorProvider, useCurrentEditor, BubbleMenu, FloatingMenu } from "@tiptap/react";
+import {
+  EditorProvider,
+  useCurrentEditor,
+  BubbleMenu,
+  FloatingMenu,
+} from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import React, { useState } from "react";
 import {
@@ -24,7 +29,7 @@ import {
   Minus,
   Scissors,
 } from "lucide-react";
-
+import { useHotkeys } from 'react-hotkey-hook';
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -47,6 +52,28 @@ function Tooltip({ text, children }) {
     </div>
   );
 }
+
+function Shortcut() {
+  // Define a hotkey for '!!'
+  const [showDiv, setShowDiv] = useState(false);
+
+  useHotkeys('!!', () => {
+    // Your custom action when '!!' is pressed
+    if (!showDiv) {
+      setShowDiv(true);
+      console.log('Double Exclamation Mark (!!) pressed');
+    }
+  });
+
+  return (
+    <div>
+      {/* Your component content */}
+      {showDiv && <div>Div shown</div>}
+    </div>
+  );
+}
+
+
 
 const MenuBar = () => {
   const { editor } = useCurrentEditor();
@@ -348,7 +375,6 @@ const Footer = () => {
   );
 };
 
-
 const content = `
 <div class="">
   <span class="flex">
@@ -361,18 +387,21 @@ const content = `
 </div>
 `;
 
+
+
 function App() {
   return (
     <div className="p-2 outline-none border-none">
       <EditorProvider
-className="bg-black"
+        className="bg-black"
         slotBefore={<MenuBar />}
         slotAfter={<Footer />}
         extensions={extensions}
         content={content}
       >
-      <FloatingMenu>This is the floating menu</FloatingMenu>
-      <BubbleMenu>This is the bubble menu</BubbleMenu>
+      <Shortcut/>
+        <FloatingMenu>This is the floating menu</FloatingMenu>
+        <BubbleMenu>This is the bubble menu</BubbleMenu>
       </EditorProvider>
     </div>
   );
