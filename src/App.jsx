@@ -62,23 +62,81 @@ function Shortcut() {
   // Define a state variable for showing/hiding the div
   const [showDiv, setShowDiv] = useState(false);
 
+function aiAction() {
+  // body...
+}
+
   return (
     <div>
-      <button onClick={() => setShowDiv(!showDiv)}><Command /></button>
+      <button onClick={() => setShowDiv(!showDiv)} className="absolute float-right top-14"><Command /></button>
       {/* Your component content */}
       <div className="relative inline-block">
         {showDiv && (
-          <div className="absolute bg-white text-black py-2 px-4 rounded-lg shadow-lg top-0 left-1/2 transform -translate-x-1/2 -mt-10 border border-black">
-            Div shown
+          <div className="absolute bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-2 -mt-10 border border-black">shown 
             <button
-              onClick={() => editor.chain().focus().insertContent("goo").run()}
+              onClick={aiAction}
               className={
                 editor.isActive("bold")
                   ? "is-active"
                   : "font-bold border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded"/> 
+              <Sparkles className="border p-1 rounded"/>{" "} Suggest
+            </button>
+            
+            <button
+              onClick={aiAction}
+              className={
+                editor.isActive("bold")
+                  ? "is-active"
+                  : "font-bold border border-gray-700 p-1"
+              }
+            >
+              <Sparkles className="border p-1 rounded"/>{" "} Suggest
+            </button>
+            
+            <button
+              onClick={aiAction}
+              className={
+                editor.isActive("bold")
+                  ? "is-active"
+                  : "font-bold border border-gray-700 p-1"
+              }
+            >
+              <Sparkles className="border p-1 rounded"/>{" "} Suggest
+            </button>
+            
+            <button
+              onClick={aiAction}
+              className={
+                editor.isActive("bold")
+                  ? "is-active"
+                  : "font-bold border border-gray-700 p-1"
+              }
+            >
+              <Sparkles className="border p-1 rounded"/>{" "} Suggest
+            </button>
+            
+            <button
+              onClick={aiAction}
+              className={
+                editor.isActive("bold")
+                  ? "is-active"
+                  : "font-bold border border-gray-700 p-1"
+              }
+            >
+              <Sparkles className="border p-1 rounded"/>{" "} Suggest
+            </button>
+            
+            <button
+              onClick={aiAction}
+              className={
+                editor.isActive("bold")
+                  ? "is-active"
+                  : "font-bold border border-gray-700 p-1"
+              }
+            >
+              <Sparkles className="border p-1 rounded"/>{" "} Suggest
             </button>
           </div>
         )}
