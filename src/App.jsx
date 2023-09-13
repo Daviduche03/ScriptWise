@@ -72,9 +72,9 @@ function Shortcut() {
         <Command />
       </button>
       {/* Your component content */}
-      <div className="relative inline-block">
+      <div className=" ">
         {showDiv && (
-          <div className="absolute bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-6 w-40 -mt-10 border border-black">
+          <div className=" bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-6 w-40 -mt-10 border border-black">
             {" "}
             <button
               onClick={aiAction}
