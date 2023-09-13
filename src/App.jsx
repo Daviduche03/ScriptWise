@@ -68,13 +68,13 @@ function Shortcut() {
 
   return (
     <div>
-      <button onClick={() => setShowDiv(!showDiv)} className=" float-right">
+      <button onClick={() => setShowDiv(!showDiv)} className="">
         <Command />
       </button>
       {/* Your component content */}
       <div className="relative inline-block">
         {showDiv && (
-          <div className="absolute bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-20 w-16 -mt-10 border border-black">
+          <div className="absolute bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-6 w-16 -mt-10 border border-black">
             {" "}
             <button
               onClick={aiAction}
@@ -416,6 +416,7 @@ const MenuBar = () => {
           insert
         </button>
       </Tooltip>
+      <Shortcut />
     </div>
   );
 };
@@ -465,7 +466,6 @@ function App() {
         extensions={extensions}
         content={content}
       >
-        <Shortcut />
         <FloatingMenu>This is the floating menu</FloatingMenu>
         <BubbleMenu>This is the bubble menu</BubbleMenu>
       </EditorProvider>
