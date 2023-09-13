@@ -30,6 +30,8 @@ import {
   Strikethrough,
   Minus,
   Scissors,
+  Command,
+  Sparkles
 } from "lucide-react";
 
 import reactLogo from "./assets/react.svg";
@@ -62,7 +64,7 @@ function Shortcut() {
 
   return (
     <div>
-      <button onClick={() => setShowDiv(!showDiv)}>button</button>
+      <button onClick={() => setShowDiv(!showDiv)}><Command /></button>
       {/* Your component content */}
       <div className="relative inline-block">
         {showDiv && (
@@ -76,7 +78,7 @@ function Shortcut() {
                   : "font-bold border border-gray-700 p-1"
               }
             >
-              insert
+              <Sparkles className="border p-1 rounded"/> 
             </button>
           </div>
         )}
