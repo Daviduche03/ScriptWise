@@ -31,7 +31,7 @@ import {
   Minus,
   Scissors,
   Command,
-  Sparkles
+  Sparkles,
 } from "lucide-react";
 
 import reactLogo from "./assets/react.svg";
@@ -62,17 +62,20 @@ function Shortcut() {
   // Define a state variable for showing/hiding the div
   const [showDiv, setShowDiv] = useState(false);
 
-function aiAction() {
-  // body...
-}
+  function aiAction() {
+    // body...
+  }
 
   return (
     <div>
-      <button onClick={() => setShowDiv(!showDiv)} className="absolute float-right top-14"><Command /></button>
+      <button onClick={() => setShowDiv(!showDiv)} className=" float-right">
+        <Command />
+      </button>
       {/* Your component content */}
       <div className="relative inline-block">
         {showDiv && (
-          <div className="absolute bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-2 -mt-10 border border-black">shown 
+          <div className="absolute bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-20 w-16 -mt-10 border border-black">
+            {" "}
             <button
               onClick={aiAction}
               className={
@@ -81,9 +84,8 @@ function aiAction() {
                   : "font-bold border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded"/>{" "} Suggest
+              <Sparkles className="border p-1 rounded" /> Suggest
             </button>
-            
             <button
               onClick={aiAction}
               className={
@@ -92,9 +94,8 @@ function aiAction() {
                   : "font-bold border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded"/>{" "} Suggest
+              <Sparkles className="border p-1 rounded" /> Suggest
             </button>
-            
             <button
               onClick={aiAction}
               className={
@@ -103,9 +104,8 @@ function aiAction() {
                   : "font-bold border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded"/>{" "} Suggest
+              <Sparkles className="border p-1 rounded" /> Suggest
             </button>
-            
             <button
               onClick={aiAction}
               className={
@@ -114,9 +114,8 @@ function aiAction() {
                   : "font-bold border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded"/>{" "} Suggest
+              <Sparkles className="border p-1 rounded" /> Suggest
             </button>
-            
             <button
               onClick={aiAction}
               className={
@@ -125,9 +124,8 @@ function aiAction() {
                   : "font-bold border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded"/>{" "} Suggest
+              <Sparkles className="border p-1 rounded" /> Suggest
             </button>
-            
             <button
               onClick={aiAction}
               className={
@@ -136,7 +134,7 @@ function aiAction() {
                   : "font-bold border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded"/>{" "} Suggest
+              <Sparkles className="border p-1 rounded" /> Suggest
             </button>
           </div>
         )}
