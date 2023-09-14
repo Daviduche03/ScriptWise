@@ -84,11 +84,11 @@ function Shortcut() {
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold p-1 hover:bg-gray-100"
+                  : " p-1 hover:bg-gray-100"
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-1 rounded h-8 w-8 mr-2" />{" "}
+                <Sparkles className="border p-2 rounded h-8 w-8 mr-2" />{" "}
                 <p>AI Auto-Complete</p>
               </div>
             </button>
@@ -99,11 +99,11 @@ function Shortcut() {
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold p-1"
+                  : " p-1"
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-1 rounded h-8 w-8 mr-2" />{" "}
+                <Sparkles className="border p-2 rounded h-8 w-8 mr-2" />{" "}
                 <p>AI Auto-Fix Grammar</p>
               </div>
             </button>
@@ -112,11 +112,11 @@ function Shortcut() {
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold p-1"
+                  : " p-1"
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-1 rounded h-8 w-8 mr-2" />{" "}
+                <Sparkles className="border p-2 rounded h-8 w-8 mr-2" />{" "}
                 <p>Extend content</p>
               </div>
             </button>
@@ -125,11 +125,11 @@ function Shortcut() {
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold p-1"
+                  : " p-1"
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-1 rounded h-8 w-8 mr-2" /> <p>Auto Emojify</p>
+                <Sparkles className="border p-2 rounded h-8 w-8 mr-2" /> <p>Auto Emojify</p>
               </div>
             </button>
             <button
@@ -137,11 +137,11 @@ function Shortcut() {
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold p-1"
+                  : " p-1"
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-1 rounded h-8 w-8 mr-2" />{" "}
+                <Sparkles className="border p-2 rounded h-8 w-8 mr-2" />{" "}
                 <p>Rephrase Content</p>
               </div>
             </button>
@@ -150,11 +150,11 @@ function Shortcut() {
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold p-1"
+                  : " p-1"
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-1 rounded h-8 w-8 mr-2" />{" "}
+                <Sparkles className="border p-2 rounded h-8 w-8 mr-2" />{" "}
                 <p>Shorten Content</p>
               </div>
             </button>
