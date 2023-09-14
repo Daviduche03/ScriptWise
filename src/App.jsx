@@ -488,7 +488,7 @@ function App() {
         extensions={extensions}
         content={content}
       >
-        <FloatingMenu>      <Shortcut /></FloatingMenu>
+        <FloatingMenu>Floating</FloatingMenu>
         <BubbleMenu>This is the bubble menu</BubbleMenu>
       </EditorProvider>
     </div>
