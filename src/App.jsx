@@ -88,7 +88,7 @@ function Shortcut() {
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-2 rounded h-8 w-8 mr-2" />{" "}
+                <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
                 <p>AI Auto-Complete</p>
               </div>
             </button>
@@ -103,7 +103,7 @@ function Shortcut() {
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-2 rounded h-8 w-8 mr-2" />{" "}
+                <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
                 <p>AI Auto-Fix Grammar</p>
               </div>
             </button>
@@ -116,7 +116,7 @@ function Shortcut() {
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-2 rounded h-8 w-8 mr-2" />{" "}
+                <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
                 <p>Extend content</p>
               </div>
             </button>
@@ -129,7 +129,7 @@ function Shortcut() {
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-2 rounded h-8 w-8 mr-2" /> <p>Auto Emojify</p>
+                <Sparkles className="border p-2 rounded h-9 w-9 mr-2" /> <p>Auto Emojify</p>
               </div>
             </button>
             <button
@@ -141,7 +141,7 @@ function Shortcut() {
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-2 rounded h-8 w-8 mr-2" />{" "}
+                <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
                 <p>Rephrase Content</p>
               </div>
             </button>
@@ -154,7 +154,7 @@ function Shortcut() {
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-2 rounded h-8 w-8 mr-2" />{" "}
+                <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
                 <p>Shorten Content</p>
               </div>
             </button>
@@ -488,7 +488,7 @@ function App() {
         extensions={extensions}
         content={content}
       >
-        <FloatingMenu>This is the floating menu</FloatingMenu>
+        <FloatingMenu>      <Shortcut /></FloatingMenu>
         <BubbleMenu>This is the bubble menu</BubbleMenu>
       </EditorProvider>
     </div>
