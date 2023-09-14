@@ -77,7 +77,7 @@ function Shortcut() {
       {/* Your component content */}
       <div className="relative block ">
         {showDiv && (
-          <div className="absolute gap-2 block bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-6 translate-y-12 w-52 -mt-10 border border-black z-10">
+          <div className="absolute gap-2 block bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-6 translate-y-12 w-52 -mt-10 border border-gray-300 z-10">
             {" "}
             <button
               onClick={aiAction}
@@ -88,7 +88,7 @@ function Shortcut() {
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-1 rounded h-10 w-10 mr-2" />{" "}
+                <Sparkles className="border p-1 rounded h-8 w-8 mr-2" />{" "}
                 <p>AI Auto-Complete</p>
               </div>
             </button>
@@ -103,7 +103,7 @@ function Shortcut() {
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-1 rounded h-10 w-10 mr-2" />{" "}
+                <Sparkles className="border p-1 rounded h-8 w-8 mr-2" />{" "}
                 <p>AI Auto-Fix Grammar</p>
               </div>
             </button>
@@ -116,7 +116,7 @@ function Shortcut() {
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-1 rounded h-10 w-10 mr-2" />{" "}
+                <Sparkles className="border p-1 rounded h-8 w-8 mr-2" />{" "}
                 <p>Extend content</p>
               </div>
             </button>
@@ -129,7 +129,7 @@ function Shortcut() {
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-1 rounded h-10 w-10 mr-2" /> <p>Auto Emojify</p>
+                <Sparkles className="border p-1 rounded h-8 w-8 mr-2" /> <p>Auto Emojify</p>
               </div>
             </button>
             <button
@@ -141,7 +141,7 @@ function Shortcut() {
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-1 rounded h-10 w-10 mr-2" />{" "}
+                <Sparkles className="border p-1 rounded h-8 w-8 mr-2" />{" "}
                 <p>Rephrase Content</p>
               </div>
             </button>
@@ -154,7 +154,7 @@ function Shortcut() {
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-1 rounded h-10 w-10 mr-2" />{" "}
+                <Sparkles className="border p-1 rounded h-8 w-8 mr-2" />{" "}
                 <p>Shorten Content</p>
               </div>
             </button>
