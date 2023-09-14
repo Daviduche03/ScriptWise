@@ -84,7 +84,7 @@ function Shortcut() {
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold border border-gray-700 p-1"
+                  : "font-bold border border-gray-700 p-1 hover:bg-gray-100"
               }
             >
               <div className="flex items-center">
