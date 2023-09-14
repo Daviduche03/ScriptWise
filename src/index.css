@@ -43,7 +43,6 @@ h1 {
 button {
   border-radius: 8px;
 
-  font-weight: 700;
   font-family: inherit;
   background-color: transparent;
   cursor: pointer;
@@ -56,6 +55,7 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+  padding: .3rem;
 }
 
 @media (prefers-color-scheme: dark) {
