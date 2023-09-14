@@ -79,56 +79,37 @@ function Shortcut() {
         {showDiv && (
           <div className="absolute gap-2 block bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-6 translate-y-12 w-52 -mt-10 border border-gray-300 z-10">
             {" "}
-            <button
-              onClick={aiAction}
-              className=""
-            >
+            <button onClick={aiAction} className="">
               <div className="flex items-center">
                 <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
                 <p>AI Auto-Complete</p>
               </div>
             </button>
-           
-           
-            <button
-              onClick={aiAction}
-              className=""
-            >
+            <button onClick={aiAction} className="">
               <div className="flex items-center">
                 <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
                 <p>AI Auto-Fix Grammar</p>
               </div>
             </button>
-            <button
-              onClick={aiAction}
-              className=""
-            >
+            <button onClick={aiAction} className="">
               <div className="flex items-center">
                 <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
                 <p>Extend content</p>
               </div>
             </button>
-            <button
-              onClick={aiAction}
-              className=""
-            >
+            <button onClick={aiAction} className="">
               <div className="flex items-center">
-                <Sparkles className="border p-2 rounded h-9 w-9 mr-2" /> <p>Auto Emojify</p>
+                <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
+                <p>Auto Emojify</p>
               </div>
             </button>
-            <button
-              onClick={aiAction}
-              className=""
-            >
+            <button onClick={aiAction} className="">
               <div className="flex items-center">
                 <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
                 <p>Rephrase Content</p>
               </div>
             </button>
-            <button
-              onClick={aiAction}
-              className=""
-            >
+            <button onClick={aiAction} className="">
               <div className="flex items-center">
                 <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
                 <p>Shorten Content</p>
