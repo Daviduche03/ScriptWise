@@ -42,7 +42,7 @@ h1 {
 
 button {
   border-radius: 8px;
-
+  padding: .4rem;
   font-family: inherit;
   background-color: transparent;
   cursor: pointer;

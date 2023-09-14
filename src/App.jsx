@@ -88,7 +88,7 @@ function Shortcut() {
               }
             >
               <div className="flex items-center">
-                <Sparkles className="border p-1 rounded text-3xl" />{" "}
+                <Sparkles className="border p-1 rounded h-8" />{" "}
                 <p>AI Auto-Complete</p>
               </div>
             </button>
