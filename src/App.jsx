@@ -64,6 +64,9 @@ function Shortcut() {
 
   function aiAction() {
     // body...
+    if (showDiv) {
+      setShowDiv(false)
+    }
   }
 
   return (
@@ -74,7 +77,7 @@ function Shortcut() {
       {/* Your component content */}
       <div className="relative block ">
         {showDiv && (
-          <div className="absolute bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-6 w-40 -mt-10 border border-black z-10">
+          <div className="absolute block bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-6 -translate-y-12 w-40 -mt-10 border border-black z-10">
             {" "}
             <button
               onClick={aiAction}
