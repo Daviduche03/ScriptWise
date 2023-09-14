@@ -81,11 +81,7 @@ function Shortcut() {
             {" "}
             <button
               onClick={aiAction}
-              className={
-                editor.isActive("bold")
-                  ? "is-active"
-                  : " p-1 hover:bg-gray-100"
-              }
+              className=""
             >
               <div className="flex items-center">
                 <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
@@ -96,11 +92,7 @@ function Shortcut() {
            
             <button
               onClick={aiAction}
-              className={
-                editor.isActive("bold")
-                  ? "is-active"
-                  : " p-1"
-              }
+              className=""
             >
               <div className="flex items-center">
                 <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
@@ -109,11 +101,7 @@ function Shortcut() {
             </button>
             <button
               onClick={aiAction}
-              className={
-                editor.isActive("bold")
-                  ? "is-active"
-                  : " p-1"
-              }
+              className=""
             >
               <div className="flex items-center">
                 <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
@@ -122,11 +110,7 @@ function Shortcut() {
             </button>
             <button
               onClick={aiAction}
-              className={
-                editor.isActive("bold")
-                  ? "is-active"
-                  : " p-1"
-              }
+              className=""
             >
               <div className="flex items-center">
                 <Sparkles className="border p-2 rounded h-9 w-9 mr-2" /> <p>Auto Emojify</p>
@@ -134,11 +118,7 @@ function Shortcut() {
             </button>
             <button
               onClick={aiAction}
-              className={
-                editor.isActive("bold")
-                  ? "is-active"
-                  : " p-1"
-              }
+              className=""
             >
               <div className="flex items-center">
                 <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
@@ -147,11 +127,7 @@ function Shortcut() {
             </button>
             <button
               onClick={aiAction}
-              className={
-                editor.isActive("bold")
-                  ? "is-active"
-                  : " p-1"
-              }
+              className=""
             >
               <div className="flex items-center">
                 <Sparkles className="border p-2 rounded h-9 w-9 mr-2" />{" "}
