@@ -87,57 +87,57 @@ function Shortcut() {
                   : "font-bold border border-gray-700 flex p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" /> Suggest
+              <Sparkles className="border p-1 rounded" /> <p>suggest</p>
             </button>
             <button
               onClick={aiAction}
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold border border-gray-700 p-1"
+                  : "font-bold flex border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" /> Suggest
+              <Sparkles className="border p-1 rounded" />  <p>suggest</p>
             </button>
             <button
               onClick={aiAction}
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold border border-gray-700 p-1"
+                  : "font-bold flex border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" /> Suggest
+              <Sparkles className="border p-1 rounded" />  <p>suggest</p>
             </button>
             <button
               onClick={aiAction}
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold border border-gray-700 p-1"
+                  : "font-bold flex border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" /> Suggest
+              <Sparkles className="border p-1 rounded" />  <p>suggest</p>
             </button>
             <button
               onClick={aiAction}
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold border border-gray-700 p-1"
+                  : "font-bold flex border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" /> Suggest
+              <Sparkles className="border p-1 rounded" />  <p>suggest</p>
             </button>
             <button
               onClick={aiAction}
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold border border-gray-700 p-1"
+                  : "font-bold flex border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" /> Suggest
+              <Sparkles className="border p-1 rounded" />  <p>suggest</p>
             </button>
           </div>
         )}
