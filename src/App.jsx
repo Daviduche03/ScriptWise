@@ -87,7 +87,7 @@ function Shortcut() {
                   : "font-bold border border-gray-700 flex p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" /> <p>suggest</p>
+              <Sparkles className="border p-1 rounded" /> <p>AI Auto-Complete</p>
             </button>
             <button
               onClick={aiAction}
@@ -97,7 +97,7 @@ function Shortcut() {
                   : "font-bold flex border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" />  <p>suggest</p>
+              <Sparkles className="border p-1 rounded" />  <p>AI Auto-Fix Grammar</p>
             </button>
             <button
               onClick={aiAction}
@@ -107,7 +107,7 @@ function Shortcut() {
                   : "font-bold flex border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" />  <p>suggest</p>
+              <Sparkles className="border p-1 rounded" />  <p>Extend content</p>
             </button>
             <button
               onClick={aiAction}
@@ -117,7 +117,7 @@ function Shortcut() {
                   : "font-bold flex border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" />  <p>suggest</p>
+              <Sparkles className="border p-1 rounded" />  <p>Auto Emojify</p>
             </button>
             <button
               onClick={aiAction}
@@ -127,7 +127,7 @@ function Shortcut() {
                   : "font-bold flex border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" />  <p>suggest</p>
+              <Sparkles className="border p-1 rounded" />  <p>Rephrase Content</p>
             </button>
             <button
               onClick={aiAction}
@@ -137,7 +137,7 @@ function Shortcut() {
                   : "font-bold flex border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" />  <p>suggest</p>
+              <Sparkles className="border p-1 rounded" />  <p>Shorten Content</p>
             </button>
           </div>
         )}
