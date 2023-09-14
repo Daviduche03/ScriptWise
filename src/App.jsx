@@ -77,14 +77,14 @@ function Shortcut() {
       {/* Your component content */}
       <div className="relative block ">
         {showDiv && (
-          <div className="absolute font-medium block bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-6 translate-y-12 w-56 -mt-10 border border-black z-10">
+          <div className="absolute flex items-center block bg-white text-black py-2 p-2 rounded-lg shadow-lg top-0 left-2 transform -translate-x-6 translate-y-12 w-56 -mt-10 border border-black z-10">
             {" "}
             <button
               onClick={aiAction}
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold border border-gray-700 flex p-1"
+                  : "font-bold border border-gray-700 flex items-center p-1"
               }
             >
               <Sparkles className="border p-1 rounded" /> <p>AI Auto-Complete</p>
