@@ -92,16 +92,44 @@ function Shortcut() {
                 <p>AI Auto-Complete</p>
               </div>
             </button>
+            <hr/>
             <button
               onClick={aiAction}
               className={
                 editor.isActive("bold")
                   ? "is-active"
-                  : "font-bold flex border border-gray-700 p-1"
+                  : "font-bold border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" />{" "}
-              <p>AI Auto-Fix Grammar</p>
+              <div className="flex items-center">
+                <Sparkles className="border p-1 rounded" />{" "}
+                <p>AI Auto-Fix Grammar</p>
+              </div>
+            </button>
+            <button
+              onClick={aiAction}
+              className={
+                editor.isActive("bold")
+                  ? "is-active"
+                  : "font-bold border border-gray-700 p-1"
+              }
+            >
+              <div className="flex items-center">
+                <Sparkles className="border p-1 rounded" />{" "}
+                <p>Extend content</p>
+              </div>
+            </button>
+            <button
+              onClick={aiAction}
+              className={
+                editor.isActive("bold")
+                  ? "is-active"
+                  : "font-bold border border-gray-700 p-1"
+              }
+            >
+              <div className="flex items-center">
+                <Sparkles className="border p-1 rounded" /> <p>Auto Emojify</p>
+              </div>
             </button>
             <button
               onClick={aiAction}
@@ -111,7 +139,10 @@ function Shortcut() {
                   : "font-bold flex border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" /> <p>Extend content</p>
+              <div className="flex items-center">
+                <Sparkles className="border p-1 rounded" />{" "}
+                <p>Rephrase Content</p>
+              </div>
             </button>
             <button
               onClick={aiAction}
@@ -121,28 +152,10 @@ function Shortcut() {
                   : "font-bold flex border border-gray-700 p-1"
               }
             >
-              <Sparkles className="border p-1 rounded" /> <p>Auto Emojify</p>
-            </button>
-            <button
-              onClick={aiAction}
-              className={
-                editor.isActive("bold")
-                  ? "is-active"
-                  : "font-bold flex border border-gray-700 p-1"
-              }
-            >
-              <Sparkles className="border p-1 rounded" />{" "}
-              <p>Rephrase Content</p>
-            </button>
-            <button
-              onClick={aiAction}
-              className={
-                editor.isActive("bold")
-                  ? "is-active"
-                  : "font-bold flex border border-gray-700 p-1"
-              }
-            >
-              <Sparkles className="border p-1 rounded" /> <p>Shorten Content</p>
+              <div className="flex items-center">
+                <Sparkles className="border p-1 rounded" />{" "}
+                <p>Shorten Content</p>
+              </div>
             </button>
           </div>
         )}
