@@ -1,5 +1,5 @@
 //import { useHotkeys } from 'react-hotkey-hook';
-
+import textCompletion from "./ai.js";
 import { Color } from "@tiptap/extension-color";
 import ListItem from "@tiptap/extension-list-item";
 import TextStyle from "@tiptap/extension-text-style";
@@ -59,13 +59,18 @@ function Tooltip({ text, children }) {
 
 function Shortcut() {
   const { editor } = useCurrentEditor();
+  
   // Define a state variable for showing/hiding the div
   const [showDiv, setShowDiv] = useState(false);
 
   function aiAction() {
+    const context = editor.getHTML()
     // body...
     if (showDiv) {
-      setShowDiv(false);
+      // setShowDiv(false);
+      textCompletion(context).then((res) => {
+        editor.chain().focus().insertContent(res).run();
+      });
     }
   }
 
@@ -124,38 +129,15 @@ function Shortcut() {
 
 const MenuBar = () => {
   const { editor } = useCurrentEditor();
-  
+
   if (!editor) {
     return null;
   }
-  const [displayText, setDisplayText] = useState('');
-  const textToType = "This is Elevate Your Investment Game with Raguie: Try the Demo!Hello, fellow investors! We're thrilled to introduce you to Raguie, the AI-powered ace up your investing sleeve. Our platform dives into the world of real-time financial data, keeps tabs on news developments, and even deciphers social media trends. What does all this mean for you? Insights. Valuable insights that can steer your investment decisions with greater confidence.Want to see Raguie in action? We've got you covered. Check out our live demo at www.RaguieDemo.com and witness firsthand how our AI algorithms translate complex information into actionable recommendations.But hey, it's not all about us. We're here to engage, chat, and learn from the incredible investing community right here on Reddit. Have questions? Curious about market trends? Or just want to share your thoughts? Drop a comment below and let's spark some insightful discussions.Ready to embark on an investment journey fueled by AI insights? Follow us for a steady stream of market wisdom, and don't forget to explore the demo. See you in the comments and at the demo page! a typing effect. Elevate Your Investment Game with Raguie: Try the Demo!Hello, fellow investors! We're thrilled to introduce you to Raguie, the AI-powered ace up your investing sleeve. Our platform dives into the world of real-time financial data, keeps tabs on news developments, and even deciphers social media trends. What does all this mean for you? Insights. Valuable insights that can steer your investment decisions with greater confidence.Want to see Raguie in action? We've got you covered. Check out our live demo at www.RaguieDemo.com and witness firsthand how our AI algorithms translate complex information into actionable recommendations.But hey, it's not all about us. We're here to engage, chat, and learn from the incredible investing community right here on Reddit. Have questions? Curious about market trends? Or just want to share your thoughts? Drop a comment below and let's spark some insightful discussions.Ready to embark on an investment journey fueled by AI insights? Follow us for a steady stream of market wisdom, and don't forget to explore the demo. See you in the comments and at the demo page!";
-  const [typingStarted, setTypingStarted] = useState(false);
-
-  useEffect(() => {
-    if (typingStarted) {
-      let currentIndex = 0;
-
-      const typingInterval = setInterval(() => {
-        if (currentIndex <= textToType.length) {
-          setDisplayText(textToType.slice(0, currentIndex));
-          currentIndex++;
-        } else {
-          clearInterval(typingInterval);
-        }
-      }, 100); // Adjust the interval to control typing speed
-
-      return () => {
-        clearInterval(typingInterval);
-      };
-    }
-  }, [typingStarted]);
 
   const handleStartTyping = () => {
     setTypingStarted(true);
-    editor.chain().focus().insertContent(displayText).run()
+    editor.chain().focus().insertContent("displayText").run();
   };
-
 
   return (
     <div className="flex flex-wrap gap-2 bg-gray-100 p-3 rounded-t-xl mb-3">
@@ -274,8 +256,6 @@ const MenuBar = () => {
           <Heading3 />
         </button>
       </Tooltip>
-
-
 
       <Tooltip text="Bullet list">
         <button
