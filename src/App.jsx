@@ -10,7 +10,7 @@ import {
   FloatingMenu,
 } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Bold,
   TextQuote,
@@ -124,10 +124,38 @@ function Shortcut() {
 
 const MenuBar = () => {
   const { editor } = useCurrentEditor();
-
+  
   if (!editor) {
     return null;
   }
+  const [displayText, setDisplayText] = useState('');
+  const textToType = "This is a typing effect.";
+  const [typingStarted, setTypingStarted] = useState(false);
+
+  useEffect(() => {
+    if (typingStarted) {
+      let currentIndex = 0;
+
+      const typingInterval = setInterval(() => {
+        if (currentIndex <= textToType.length) {
+          setDisplayText(textToType.slice(0, currentIndex));
+          currentIndex++;
+        } else {
+          clearInterval(typingInterval);
+        }
+      }, 100); // Adjust the interval to control typing speed
+
+      return () => {
+        clearInterval(typingInterval);
+      };
+    }
+  }, [typingStarted]);
+
+  const handleStartTyping = () => {
+    setTypingStarted(true);
+    editor.chain().focus().insertContent(displayText).run()
+  };
+
 
   return (
     <div className="flex flex-wrap gap-2 bg-gray-100 p-3 rounded-t-xl mb-3">
@@ -346,7 +374,7 @@ const MenuBar = () => {
 
       <Tooltip text="insert">
         <button
-          onClick={() => editor.chain().focus().insertContent("goo").run()}
+          onClick={handleStartTyping}
           className={
             editor.isActive("bold")
               ? "is-active"
