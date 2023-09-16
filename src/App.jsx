@@ -246,48 +246,9 @@ const MenuBar = () => {
           <Heading3 />
         </button>
       </Tooltip>
-      <Tooltip text="Heading 4">
-        <button
-          onClick={() =>
-            editor.chain().focus().toggleHeading({ level: 4 }).run()
-          }
-          className={
-            editor.isActive("heading", { level: 4 })
-              ? "is-active"
-              : "font-bold border border-gray-700 p-1"
-          }
-        >
-          <Heading4 />
-        </button>
-      </Tooltip>
-      <Tooltip text="Heading 5">
-        <button
-          onClick={() =>
-            editor.chain().focus().toggleHeading({ level: 5 }).run()
-          }
-          className={
-            editor.isActive("heading", { level: 5 })
-              ? "is-active"
-              : "font-bold border border-gray-700 p-1"
-          }
-        >
-          <Heading5 />
-        </button>
-      </Tooltip>
-      <Tooltip text="Heading 6">
-        <button
-          onClick={() =>
-            editor.chain().focus().toggleHeading({ level: 6 }).run()
-          }
-          className={
-            editor.isActive("heading", { level: 6 })
-              ? "is-active"
-              : "font-bold border border-gray-700 p-1"
-          }
-        >
-          <Heading6 />
-        </button>
-      </Tooltip>
+
+
+
       <Tooltip text="Bullet list">
         <button
           onClick={() => editor.chain().focus().toggleBulletList().run()}
