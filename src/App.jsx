@@ -18,11 +18,10 @@ import {
   Heading1,
   Heading2,
   Heading3,
-  Heading4,
-  Heading5,
-  Heading6,
+  Table2,
   Pilcrow,
   List,
+  Sheet,
   Italic,
   Code,
   Redo2,
@@ -51,6 +50,38 @@ function Tooltip({ text, children }) {
       {showTooltip && (
         <div className="absolute bg-white text-black py-2 px-4 rounded-lg shadow-lg top-0 left-1/2 transform -translate-x-1/2 -mt-10 border border-black">
           {text}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function Hover({ children }) {
+  const { editor } = useCurrentEditor();
+  const [showHover, setShowHover] = useState(false);
+
+  return (
+    <div
+      className="relative inline-block"
+      onMouseEnter={() => setShowHover(true)}
+      onMouseLeave={() => setShowHover(false)}
+    >
+      {children}
+      {showHover && (
+        <div className="absolute bg-white text-black px-4 rounded-lg shadow-lg top-0 left-1/2 transform -translate-x-1/2 translate-y-20 -mt-10 border border-gray-400 z-10">
+          <div className="flex items-center">
+                      <button className="">
+              <Tooltip text="add table">
+                <Sheet className="border p-2 rounded h-8 w-8 mr-2" />
+                
+              </Tooltip>
+            </button>
+            <button className="">
+              <div className="flex items-center">
+                <Sparkles className="border p-2 rounded h-8 w-8 mr-2" />
+              </div>
+            </button>
+          </div>
         </div>
       )}
     </div>
@@ -134,11 +165,7 @@ const MenuBar = () => {
     return null;
   }
 
-  const handleStartTyping = () => {
-    setTypingStarted(true);
-    editor.chain().focus().insertContent("displayText").run();
-  };
-
+  
   return (
     <div className="flex flex-wrap gap-2 bg-gray-100 p-3 rounded-t-xl mb-3">
       <Tooltip text="Bold">
@@ -354,7 +381,7 @@ const MenuBar = () => {
 
       <Tooltip text="insert">
         <button
-          onClick={handleStartTyping}
+          onClick={() => editor.chain().focus().insertContent('ggg').run()}
           className={
             editor.isActive("bold")
               ? "is-active"
@@ -364,7 +391,20 @@ const MenuBar = () => {
           insert
         </button>
       </Tooltip>
-      <Shortcut />
+
+      <Hover>
+        <button
+          onClick={() => editor.chain().focus().toggleBold().run()}
+          disabled={!editor.can().chain().focus().toggleBold().run()}
+          className={
+            editor.isActive("bold")
+              ? "is-active"
+              : "font-bold border border-gray-700 p-1"
+          }
+        >
+          <Table2 />
+        </button>
+      </Hover>
     </div>
   );
 };
@@ -384,13 +424,7 @@ const extensions = [
   }),
 ];
 
-const Footer = () => {
-  return (
-    <div className="p-3 bg-[#111] text-white rounded-b-xl mt-3">
-      <p>Made with ❤️ by David uche</p>
-    </div>
-  );
-};
+
 
 const content = `
 <div class="">
@@ -408,13 +442,12 @@ function App() {
   return (
     <div className="p-2 outline-none border-none">
       <EditorProvider
-        className="bg-black"
+        
         slotBefore={<MenuBar />}
-        slotAfter={<Footer />}
         extensions={extensions}
         content={content}
       >
-        <FloatingMenu>Floating</FloatingMenu>
+        <FloatingMenu>      <Shortcut /></FloatingMenu>
         <BubbleMenu>This is the bubble menu</BubbleMenu>
       </EditorProvider>
     </div>
