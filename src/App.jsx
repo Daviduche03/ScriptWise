@@ -70,10 +70,10 @@ function Hover({ children }) {
       {showHover && (
         <div className="absolute bg-white text-black px-4 rounded-lg shadow-lg top-0 left-1/2 transform -translate-x-1/2 translate-y-20 -mt-10 border border-gray-400 z-10">
           <div className="flex items-center">
-                      <button className="">
+            <button className="">
               <Tooltip text="add table">
                 <Sheet className="border p-2 rounded h-8 w-8 mr-2" />
-                
+
               </Tooltip>
             </button>
             <button className="">
@@ -90,7 +90,7 @@ function Hover({ children }) {
 
 function Shortcut() {
   const { editor } = useCurrentEditor();
-  
+
   // Define a state variable for showing/hiding the div
   const [showDiv, setShowDiv] = useState(false);
 
@@ -165,7 +165,7 @@ const MenuBar = () => {
     return null;
   }
 
-  
+
   return (
     <div className="flex flex-wrap gap-2 bg-gray-100 p-3 rounded-t-xl mb-3">
       <Tooltip text="Bold">
@@ -442,7 +442,7 @@ function App() {
   return (
     <div className="p-2 outline-none border-none">
       <EditorProvider
-        
+
         slotBefore={<MenuBar />}
         extensions={extensions}
         content={content}
