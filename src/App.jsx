@@ -32,7 +32,6 @@ import {
   Command,
   Sparkles,
 } from "lucide-react";
-
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -415,6 +414,7 @@ const extensions = [
   StarterKit.configure({
     bulletList: {
       keepMarks: true,
+      
       keepAttributes: false, //TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
     },
     orderedList: {
