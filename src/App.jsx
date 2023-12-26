@@ -9,6 +9,7 @@ import {
   BubbleMenu,
   FloatingMenu,
 } from "@tiptap/react";
+import { getPrevText } from "./getPrevText.js";
 import StarterKit from "@tiptap/starter-kit";
 import React, { useState, useEffect } from "react";
 import {
@@ -72,7 +73,6 @@ function Hover({ children }) {
             <button className="">
               <Tooltip text="add table">
                 <Sheet className="border p-2 rounded h-8 w-8 mr-2" />
-
               </Tooltip>
             </button>
             <button className="">
@@ -94,7 +94,7 @@ function Shortcut() {
   const [showDiv, setShowDiv] = useState(false);
 
   function aiAction() {
-    const context = editor.getHTML()
+    const context = editor.getHTML();
     // body...
     if (showDiv) {
       // setShowDiv(false);
@@ -164,6 +164,22 @@ const MenuBar = () => {
     return null;
   }
 
+   const selection = editor.state.selection;
+  const lastTwo = getPrevText(editor, {
+    chars: 2,
+  });
+  if (lastTwo === "++") {
+    editor.commands.deleteRange({
+      from: selection.from - 2,
+      to: selection.from,
+    });
+    alert("nice")
+  }
+  // complete(
+  //   getPrevText(editor, {
+  //     chars: 5000,
+  //   })
+  // );
 
   return (
     <div className="flex flex-wrap gap-2 bg-gray-100 p-3 rounded-t-xl mb-3">
@@ -380,7 +396,7 @@ const MenuBar = () => {
 
       <Tooltip text="insert">
         <button
-          onClick={() => editor.chain().focus().insertContent('ggg').run()}
+          onClick={() => editor.chain().focus().insertContent("ggg").run()}
           className={
             editor.isActive("bold")
               ? "is-active"
@@ -414,7 +430,7 @@ const extensions = [
   StarterKit.configure({
     bulletList: {
       keepMarks: true,
-      
+
       keepAttributes: false, //TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
     },
     orderedList: {
@@ -423,8 +439,6 @@ const extensions = [
     },
   }),
 ];
-
-
 
 const content = `
 <div class="">
@@ -442,12 +456,14 @@ function App() {
   return (
     <div className="p-2 outline-none border-none">
       <EditorProvider
-
         slotBefore={<MenuBar />}
         extensions={extensions}
         content={content}
       >
-        <FloatingMenu>      <Shortcut /></FloatingMenu>
+        <FloatingMenu>
+          {" "}
+          <Shortcut />
+        </FloatingMenu>
         <BubbleMenu>This is the bubble menu</BubbleMenu>
       </EditorProvider>
     </div>
