@@ -1,5 +1,5 @@
 //import { useHotkeys } from 'react-hotkey-hook';
-import textCompletion from "./ai.js";
+import { OpenRouterApi } from "./ai.js";
 import { Color } from "@tiptap/extension-color";
 import ListItem from "@tiptap/extension-list-item";
 import TextStyle from "@tiptap/extension-text-style";
@@ -10,8 +10,9 @@ import {
   FloatingMenu,
 } from "@tiptap/react";
 import { getPrevText } from "./getPrevText.js";
+import DragAndDrop from "./drag-and-drop.jsx";
 import StarterKit from "@tiptap/starter-kit";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Bold,
   TextQuote,
@@ -159,12 +160,17 @@ function Shortcut() {
 
 const MenuBar = () => {
   const { editor } = useCurrentEditor();
-
+  const openRouter = new OpenRouterApi();
+  const prev = useRef("");
+  const promptText = getPrevText(editor, {
+    chars: 5000,
+  });
   if (!editor) {
     return null;
   }
 
-   const selection = editor.state.selection;
+  
+const selection = editor.state.selection;
   const lastTwo = getPrevText(editor, {
     chars: 2,
   });
@@ -172,9 +178,46 @@ const MenuBar = () => {
     editor.commands.deleteRange({
       from: selection.from - 2,
       to: selection.from,
-    });
-    alert("nice")
+    });    openRouter.callApi(
+      promptText,
+      (error) => {
+        console.error("Error:", error);
+      },
+      (response) => {
+        const textChunks = response.split(''); // Split the response into individual characters (or chunks)
+        
+        // Define a function to insert a single chunk and call it recursively
+        const insertNextChunk = (index) => {
+          if (index < textChunks.length) {
+            const chunk = textChunks[index];
+            editor.chain().focus().insertContent(chunk).run();
+    
+            // Adjust the delay based on your requirements
+            setTimeout(() => {
+              insertNextChunk(index + 1);
+            }, 10); // Example delay of 10 milliseconds
+          } else {
+            // Selection logic or any other post-processing
+            editor?.commands.setTextSelection({
+              from: editor.state.selection.from - response.length,
+              to: editor.state.selection.from,
+            });
+    
+            console.log("Response:", response);
+          }
+        };
+    
+        // Start inserting chunks
+        insertNextChunk(0);
+      },
+      () => {
+        console.log("Request finished");
+      }
+    );
+    
+    
   }
+
   // complete(
   //   getPrevText(editor, {
   //     chars: 5000,
@@ -438,6 +481,7 @@ const extensions = [
       keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
     },
   }),
+  DragAndDrop,
 ];
 
 const content = `
